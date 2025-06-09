@@ -1,3 +1,5 @@
 export default class Overlay {
-  constructor() {}
+  constructor() {
+    console.log("Overlays");
+  }
 }
