@@ -14,3 +14,38 @@ body {
   left: 0;
   outline: none;
 }
+
+.nav-bar {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.nav-elements {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+.button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to top left, #56ab2f, #a8e063);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to top left, #4caf50, #8bc34a);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
