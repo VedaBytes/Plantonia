@@ -5,6 +5,7 @@ import Camera from "./Camera.js";
 import Time from "./utils/Time.js";
 import World from "./world/World.js";
 import Resources from "./utils/Resources.js";
+import Raycaster from "./mechincs/Raycaster.js";
 
 let instance = null;
 
@@ -23,6 +24,7 @@ export default class Game {
     this.renderer = new Renderer();
     this.time = new Time();
     this.world = new World();
+    this.raycaster = new Raycaster();
 
     this.sizes.on("resize", () => {
       this.resize();
@@ -42,5 +44,6 @@ export default class Game {
     this.camera.update();
     this.world.update();
     this.renderer.update();
+    this.raycaster.update();
   }
 }

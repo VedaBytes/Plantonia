@@ -1,34 +1,18 @@
 import Game from "../Game.js";
 
 export default class Plant {
-  constructor(plantdata) {
+  constructor() {
     this.game = new Game();
-    this.plantData = plantdata;
     this.scene = this.game.scene;
     this.resources = this.game.resource;
-    this.resource = this.resources.items[this.plantData.modelName];
+    this.resource = this.resources.items.plantModel;
 
     this.setModel();
   }
 
   setModel() {
-    this.model = this.resource.scene;
-    this.model.position.y = 1.05;
-    this.model.scale.set(1, 1, 1);
-    this.scene.add(this.model);
-  }
-
-  update() {
-    this.growth += this.plantData.growthSpeed;
-    const scale = 1 + this.growth;
-    this.model.scale.set(scale, scale, scale);
-  }
-
-  water() {
-    this.growth += 0.1;
-  }
-
-  remove() {
-    this.scene.remove(this.model);
+    this.items = this.resource.scene;
+    this.items.scale.set(0.5, 0.5, 0.5);
+    this.scene.add(this.items);
   }
 }
